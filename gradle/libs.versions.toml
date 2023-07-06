@@ -10,6 +10,10 @@ activity-compose = "1.7.2"
 compose-bom = "2023.03.00"
 hilt = "2.44"
 hilt-navigation = "1.0.0"
+coil = "2.4.0"
+ui-util = "1.4.3"
+navigation-compose = "2.6.0"
+compose-material = "1.4.3"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -30,6 +34,10 @@ lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmode
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation", version.ref = "hilt-navigation" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
+compose-material = { group = "androidx.compose.material", name = "material", version.ref = "compose-material" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

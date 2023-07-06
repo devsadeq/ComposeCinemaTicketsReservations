@@ -73,4 +73,8 @@ dependencies {
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.coil.compose)
+    implementation(libs.compose.ui.util)
+    implementation(libs.navigation.compose)
+    implementation(libs.compose.material)
 }
