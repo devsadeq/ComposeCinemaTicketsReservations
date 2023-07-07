@@ -1,43 +1,56 @@
 package com.devsadeq.composecinematicketsreservations.ui.screen.home
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.pager.PagerState
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.devsadeq.composecinematicketsreservations.R
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.devsadeq.composecinematicketsreservations.ui.composable.BlurBackground
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomeFilterChips
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomeOverview
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomePager
+import com.devsadeq.composecinematicketsreservations.viewmodel.home.HomeUIState
+import com.devsadeq.composecinematicketsreservations.viewmodel.home.HomeViewModel
 
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen() {
-    HomeScreenContent()
+fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
+    val state by viewModel.state.collectAsState()
+    val pagerState = rememberPagerState(initialPage = 1)
+
+    HomeScreenContent(
+        state = state,
+        pagerState = pagerState
+    )
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun HomeScreenContent() {
-    val images = listOf(
-        R.drawable.movie1,
-        R.drawable.movie2,
-        R.drawable.movie3,
-    )
+private fun HomeScreenContent(
+    state: HomeUIState,
+    pagerState: PagerState
+) {
 
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        BlurBackground(image = images[2])
+        BlurBackground(image = state.movies[pagerState.currentPage].imageRes)
         Column(
             modifier = Modifier,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             HomeFilterChips()
-            HomePager(images)
-            HomeOverview()
+            HomePager(state.movies, pagerState = pagerState)
+            HomeOverview(state, pagerState)
         }
     }
 }
