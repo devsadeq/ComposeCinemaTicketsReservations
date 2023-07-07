@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.devsadeq.composecinematicketsreservations.ui.composable.DetailsBackgroundImage
 import com.devsadeq.composecinematicketsreservations.ui.composable.DetailsBottomSheet
+import com.devsadeq.composecinematicketsreservations.ui.composable.DetailsHeader
 
 @Composable
 fun DetailsScreen() {
@@ -19,7 +20,8 @@ fun DetailsScreenContent() {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
-        DetailsBackgroundImage()
+        DetailsBackgroundImage(modifier = Modifier.align(Alignment.TopCenter))
+        DetailsHeader()
         DetailsBottomSheet(modifier = Modifier.align(Alignment.BottomCenter))
     }
 }
