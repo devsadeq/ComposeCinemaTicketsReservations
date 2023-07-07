@@ -14,9 +14,9 @@ import com.devsadeq.composecinematicketsreservations.R
 
 
 @Composable
-fun HomeFilterChips() {
+fun HomeFilterChips(modifier: Modifier = Modifier) {
     Row(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(top = 36.dp, bottom = 24.dp),
         horizontalArrangement = Arrangement.Center
@@ -30,7 +30,7 @@ fun HomeFilterChips() {
         AppChip(
             label = stringResource(R.string.coming_soon),
             onClick = {},
-            enabled = true
+            enabled = false
         )
     }
 }

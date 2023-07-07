@@ -1,11 +1,14 @@
 package com.devsadeq.composecinematicketsreservations.ui.screen.home
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.devsadeq.composecinematicketsreservations.R
+import com.devsadeq.composecinematicketsreservations.ui.composable.BlurBackground
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomeFilterChips
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomeOverview
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomePager
@@ -24,13 +27,18 @@ private fun HomeScreenContent() {
         R.drawable.movie3,
     )
 
-    Column(
-        modifier = Modifier,
-        horizontalAlignment = Alignment.CenterHorizontally,
+    Box(
+        modifier = Modifier.fillMaxSize()
     ) {
-        HomeFilterChips()
-        HomePager(images)
-        HomeOverview()
+        BlurBackground(image = images[2])
+        Column(
+            modifier = Modifier,
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            HomeFilterChips()
+            HomePager(images)
+            HomeOverview()
+        }
     }
 }
 
