@@ -25,8 +25,8 @@ fun HomePager() {
 
     HorizontalPager(
         pageCount = 3,
-        contentPadding = PaddingValues(horizontal = 70.dp),
-        pageSpacing = 0.dp,
+        contentPadding = PaddingValues(horizontal = 60.dp),
+        pageSpacing = (-15).dp,
         state = state
     ) { page ->
         val scale = animateFloatAsState(

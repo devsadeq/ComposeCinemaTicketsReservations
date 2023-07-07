@@ -6,6 +6,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomeFilterChips
+import com.devsadeq.composecinematicketsreservations.ui.composable.HomeOverview
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomePager
 
 
@@ -22,8 +23,10 @@ private fun HomeScreenContent() {
     ) {
         HomeFilterChips()
         HomePager()
+        HomeOverview()
     }
 }
+
 
 @Preview(showBackground = true, showSystemUi = true, apiLevel = 31)
 @Composable
