@@ -9,7 +9,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.devsadeq.composecinematicketsreservations.R
 
 @Composable
 fun MovieItem(
@@ -22,7 +24,13 @@ fun MovieItem(
         modifier = modifier
             .fillMaxWidth()
             .height(450.dp)
-            .clip(RoundedCornerShape(16.dp)),
+            .clip(RoundedCornerShape(30.dp)),
         contentScale = ContentScale.Crop,
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MovieItemPreview() {
+    MovieItem(image = R.drawable.movie1)
 }

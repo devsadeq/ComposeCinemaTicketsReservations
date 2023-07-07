@@ -27,6 +27,7 @@ fun AppChip(
     modifier: Modifier = Modifier,
     enabled: Boolean = false,
     labelPadding: PaddingValues = PaddingValues(8.dp),
+    borderColor: Color = Grey,
     labelStyle: TextStyle = TextStyle(
         fontSize = 14.sp,
         letterSpacing = 0.15.sp,
@@ -42,7 +43,7 @@ fun AppChip(
             disabledBackgroundColor = Color.Transparent,
         ),
         enabled = enabled,
-        border = if (enabled.not()) BorderStroke(1.dp, Grey) else null,
+        border = if (enabled.not()) BorderStroke(1.dp, borderColor) else null,
     ) {
         Text(
             text = label,

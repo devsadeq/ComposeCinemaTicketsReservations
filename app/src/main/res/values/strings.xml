@@ -6,4 +6,12 @@
     <string name="fantasy">Fantasy</string>
     <string name="adventure">Adventure</string>
     <string name="fantastic_beasts_the_secrets_of_dumbledore">Fantastic Beasts: The Secrets of Dumbledore</string>
+    <string name="details_description">Professor Albus Dumbledore knows the powerful Dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts Magizoologist Newt Scamander to lead an intrepid team of wizards, witches and one brave Muggle baker on a dangerous mission, where they encounter old and new foes. But winning this battle against Grindelwald means making the ultimate sacrifice.</string>
+    <string name="booking">Booking</string>
+    <string name="_6_8">6.8</string>
+    <string name="imdb">IMDB</string>
+    <string name="rotten_tomatoes">Rotten Tomatoes</string>
+    <string name="_36">36%</string>
+    <string name="ign">IGN</string>
+    <string name="_4">4</string>
 </resources>
