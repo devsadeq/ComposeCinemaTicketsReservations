@@ -32,8 +32,8 @@ fun ReservationScreenHeader(modifier: Modifier, onCloseClicked: () -> Unit) {
                 painter = painterResource(R.drawable.ic_close_circle),
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(4.dp)
-                    .size(24.dp),
+                    .padding(8.dp)
+                    .size(28.dp),
                 tint = White,
             )
         }

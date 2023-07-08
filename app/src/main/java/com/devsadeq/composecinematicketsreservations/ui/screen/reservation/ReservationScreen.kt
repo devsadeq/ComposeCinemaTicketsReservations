@@ -53,7 +53,7 @@ private fun ReservationScreenContent(
             onSeatClick = onSeatClick,
             modifier = Modifier
                 .align(Alignment.TopCenter)
-                .padding(top = 200.dp)
+                .padding(top = 250.dp)
         )
         ReservationScreenFooter(
             state = state,

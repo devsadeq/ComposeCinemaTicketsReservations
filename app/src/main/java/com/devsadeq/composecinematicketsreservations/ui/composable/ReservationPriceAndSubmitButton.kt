@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.devsadeq.composecinematicketsreservations.R
@@ -24,21 +25,21 @@ fun ReservationPriceAndSubmitButton() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp)
-            .padding(top = 20.dp),
+            .padding(top = 20.dp, bottom = 10.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Column {
             Text(
                 text = stringResource(R.string._100_00),
-                fontSize = 24.sp,
+                fontSize = 36.sp,
                 fontWeight = FontWeight.Medium,
                 fontFamily = OpenSans,
                 color = Black
             )
             Text(
                 text = stringResource(R.string._4_tickets),
-                fontSize = 12.sp,
+                fontSize = 14.sp,
                 fontWeight = FontWeight.Normal,
                 fontFamily = OpenSans,
                 color = DarkGrey
@@ -49,4 +50,10 @@ fun ReservationPriceAndSubmitButton() {
             text = stringResource(R.string.buy_tickets),
         )
     }
+}
+
+@Preview
+@Composable
+fun ReservationPriceAndSubmitButtonPreview() {
+    ReservationPriceAndSubmitButton()
 }

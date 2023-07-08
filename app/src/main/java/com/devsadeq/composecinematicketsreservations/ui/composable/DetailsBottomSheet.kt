@@ -44,7 +44,7 @@ fun DetailsBottomSheet(
             MovieCategories()
             ActorsImages(state.actors)
             MovieDescription()
-            CustomButton(onClick = onReserveClicked)
+            CustomButton(onClick = onReserveClicked, modifier = Modifier.padding(top = 24.dp))
         }
     }
 }
