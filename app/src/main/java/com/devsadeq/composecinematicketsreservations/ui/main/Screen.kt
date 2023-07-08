@@ -11,4 +11,5 @@ sealed class Screen(
     object Search : Screen("search", "Search", R.drawable.ic_search)
     object Cart : Screen("cart", "Cart", R.drawable.ic_ticket)
     object Profile : Screen("profile", "Profile", R.drawable.ic_profile)
+    object Details : Screen("details", "Details", R.drawable.ic_profile)
 }
