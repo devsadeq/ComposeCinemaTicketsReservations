@@ -4,7 +4,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -71,10 +73,9 @@ fun BottomNavBar(navController: NavHostController) {
     val currentRoute = navBackStackEntry?.destination?.route
 
     BottomNavigation(
-        modifier = Modifier,
+        modifier = Modifier.height(80.dp),
         backgroundColor = White,
-        contentColor = White,
-        elevation = 0.dp
+        elevation = 0.dp,
     ) {
         screens.forEach { screen ->
             AddItem(
@@ -99,18 +100,20 @@ fun RowScope.AddItem(
                     modifier = Modifier
                         .clip(RoundedCornerShape(50.dp))
                         .background(Orange)
-                        .padding(8.dp),
+                        .padding(16.dp),
                 ) {
                     Icon(
                         painter = painterResource(id = screen.icon),
                         contentDescription = screen.title,
-                        tint = MaterialTheme.colorScheme.onPrimary
+                        tint = MaterialTheme.colorScheme.onPrimary,
+                        modifier = Modifier.size(24.dp)
                     )
                 }
             } else {
                 Icon(
                     painter = painterResource(id = screen.icon),
-                    contentDescription = screen.title
+                    contentDescription = screen.title,
+                    modifier = Modifier.size(24.dp)
                 )
             }
         },

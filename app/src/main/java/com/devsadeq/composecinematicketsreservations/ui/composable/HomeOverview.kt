@@ -24,6 +24,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.devsadeq.composecinematicketsreservations.R
 import com.devsadeq.composecinematicketsreservations.ui.theme.DarkGrey
+import com.devsadeq.composecinematicketsreservations.ui.theme.Grey
+import com.devsadeq.composecinematicketsreservations.ui.theme.LightGrey
+import com.devsadeq.composecinematicketsreservations.ui.theme.OpenSans
 import com.devsadeq.composecinematicketsreservations.viewmodel.home.HomeUIState
 
 
@@ -43,17 +46,21 @@ fun HomeOverview(
             Icon(
                 painter = painterResource(R.drawable.ic_clock),
                 contentDescription = null,
+                tint = Grey,
                 modifier = Modifier.size(16.dp)
             )
             Text(
                 text = state.movies[pagerState.settledPage].duration,
-                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.Medium,
+                fontSize = 14.sp,
                 modifier = Modifier.padding(start = 4.dp),
             )
         }
         Text(
-            text = state.movies[pagerState.settledPage].title,
-            style = MaterialTheme.typography.headlineSmall,
+            text = state.movies[pagerState.settledPage].title.replaceFirstChar { it.uppercase() },
+            fontFamily = OpenSans,
+            fontWeight = FontWeight.Medium,
+            fontSize = 24.sp,
             modifier = Modifier.padding(vertical = 8.dp),
             textAlign = TextAlign.Center,
         )
@@ -67,11 +74,12 @@ fun HomeOverview(
                     label = genre,
                     onClick = {},
                     labelPadding = PaddingValues(2.dp),
+                    borderColor = LightGrey,
                     labelStyle = MaterialTheme.typography.labelMedium.copy(
-                        fontSize = 12.sp,
+                        fontSize = 14.sp,
                         letterSpacing = 0.15.sp,
                         color = DarkGrey,
-                        fontWeight = FontWeight.SemiBold
+                        fontWeight = FontWeight.Bold
                     )
                 )
                 Spacer(modifier = Modifier.width(4.dp))

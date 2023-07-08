@@ -18,7 +18,7 @@ class HomeViewModel @Inject constructor() : ViewModel() {
             title = "Morbius",
             imageRes = R.drawable.movie1,
             duration = "1h 50m",
-            genres = listOf("horror", "Action", "Thriller")
+            genres = listOf("Horror", "Action", "Thriller")
         ),
         HomeUIState.MovieUIState(
             title = "fantastic Beasts: The Secrets of Dumbledore",
@@ -30,7 +30,7 @@ class HomeViewModel @Inject constructor() : ViewModel() {
             title = "Doctor Strange in the Multiverse of Madness",
             imageRes = R.drawable.movie3,
             duration = "3h 15m",
-            genres = listOf("action", "Adventure", "Fantasy")
+            genres = listOf("Action", "Adventure", "Fantasy")
         )
     )
 
