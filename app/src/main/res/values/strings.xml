@@ -14,4 +14,7 @@
     <string name="_36">36%</string>
     <string name="ign">IGN</string>
     <string name="_4">4</string>
+    <string name="available">Available</string>
+    <string name="taken">Taken</string>
+    <string name="selected">Selected</string>
 </resources>
