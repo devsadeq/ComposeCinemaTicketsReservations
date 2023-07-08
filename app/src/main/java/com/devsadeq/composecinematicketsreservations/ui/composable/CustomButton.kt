@@ -21,10 +21,14 @@ import com.devsadeq.composecinematicketsreservations.ui.theme.Orange
 import com.devsadeq.composecinematicketsreservations.ui.theme.White
 
 @Composable
-fun CustomButton() {
+fun CustomButton(
+    icon: Int = R.drawable.ic_ticket,
+    text: String = stringResource(R.string.booking),
+    modifier: Modifier = Modifier
+) {
     Button(
         onClick = {},
-        modifier = Modifier.padding(top = 24.dp),
+        modifier = modifier,
         colors = ButtonDefaults.buttonColors(
             containerColor = Orange
         )
@@ -33,14 +37,14 @@ fun CustomButton() {
             modifier = Modifier.padding(8.dp)
         ) {
             Icon(
-                painter = painterResource(R.drawable.ic_ticket),
+                painter = painterResource(icon),
                 contentDescription = null,
                 tint = White,
                 modifier = Modifier.size(24.dp)
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
-                stringResource(R.string.booking),
+                text,
                 color = White,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Normal

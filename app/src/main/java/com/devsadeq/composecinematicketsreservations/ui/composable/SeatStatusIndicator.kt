@@ -15,7 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.devsadeq.composecinematicketsreservations.ui.theme.DarkGrey
+import com.devsadeq.composecinematicketsreservations.ui.theme.Grey
 import com.devsadeq.composecinematicketsreservations.ui.theme.OpenSans
 
 
@@ -36,9 +36,9 @@ fun SeatStatusIndicator(
         Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = label,
-            color = DarkGrey,
+            color = Grey,
             fontFamily = OpenSans,
-            fontSize = 12.sp
+            fontSize = 14.sp
         )
     }
 }

@@ -14,6 +14,8 @@ class ReservationViewModel @Inject constructor() : ViewModel() {
 
     init {
         getSeats()
+        getDays()
+        getTimes()
     }
 
     fun onSeatSelected(seatId: Int) {
@@ -42,5 +44,34 @@ class ReservationViewModel @Inject constructor() : ViewModel() {
             )
         }
         _state.value = _state.value.copy(seats = seats)
+    }
+
+    private fun getDays() {
+        val days = mutableListOf<DayUIState>()
+        for (i in 1..30) {
+            days.add(
+                DayUIState(
+                    id = i,
+                    dayOfWeek = if (i == 1) "Today" else "Day $i",
+                    dayOfMonth = i,
+                    isSelected = i == 1
+                )
+            )
+        }
+        _state.value = _state.value.copy(days = days)
+    }
+
+    private fun getTimes() {
+        val times = mutableListOf<TimeUIState>()
+        for (i in 1..7) {
+            times.add(
+                TimeUIState(
+                    id = i,
+                    time = "${i + 10}:00",
+                    isSelected = i == 1
+                )
+            )
+        }
+        _state.value = _state.value.copy(times = times)
     }
 }
