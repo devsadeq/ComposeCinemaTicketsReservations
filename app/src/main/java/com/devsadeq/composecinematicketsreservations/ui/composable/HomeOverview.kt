@@ -37,7 +37,7 @@ fun HomeOverview(
     pagerState: PagerState,
 ) {
     Column(
-        modifier = Modifier.padding(vertical = 24.dp, horizontal = 60.dp),
+        modifier = Modifier.padding(vertical = 36.dp, horizontal = 60.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Row(
@@ -63,6 +63,7 @@ fun HomeOverview(
             fontSize = 24.sp,
             modifier = Modifier.padding(vertical = 8.dp),
             textAlign = TextAlign.Center,
+            lineHeight = 32.sp
         )
         Row(
             modifier = Modifier
