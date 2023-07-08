@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">ComposeCinemaTicketsReservations</string>
+    <string name="now_showing">Now Showing</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="_2h_23m">2h 23m</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="adventure">Adventure</string>
+    <string name="fantastic_beasts_the_secrets_of_dumbledore">Fantastic Beasts: The Secrets of Dumbledore</string>
+    <string name="details_description">Professor Albus Dumbledore knows the powerful Dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him alone, he entrusts Magizoologist Newt Scamander to lead an intrepid team of wizards, witches and one brave Muggle baker on a dangerous mission, where they encounter old and new foes. But winning this battle against Grindelwald means making the ultimate sacrifice.</string>
+    <string name="booking">Booking</string>
+    <string name="_6_8">6.8</string>
+    <string name="imdb">IMDB</string>
+    <string name="rotten_tomatoes">Rotten Tomatoes</string>
+    <string name="_36">36%</string>
+    <string name="ign">IGN</string>
+    <string name="_4">4</string>
+    <string name="available">Available</string>
+    <string name="taken">Taken</string>
+    <string name="selected">Selected</string>
+    <string name="buy_tickets">Buy Tickets</string>
+    <string name="_100_00">$100.00</string>
+    <string name="_4_tickets">4 tickets</string>
 </resources>
