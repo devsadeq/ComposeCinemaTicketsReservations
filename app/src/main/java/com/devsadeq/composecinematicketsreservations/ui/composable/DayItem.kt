@@ -14,7 +14,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.devsadeq.composecinematicketsreservations.ui.theme.DarkGrey
 import com.devsadeq.composecinematicketsreservations.ui.theme.Grey
 import com.devsadeq.composecinematicketsreservations.ui.theme.LightGrey
 import com.devsadeq.composecinematicketsreservations.ui.theme.White
@@ -30,7 +29,7 @@ fun DayItem(
         modifier = Modifier
             .border(1.dp, LightGrey, RoundedCornerShape(16.dp))
             .clip(RoundedCornerShape(16.dp))
-            .background(if (isSelected) DarkGrey else Color.Transparent)
+            .background(if (isSelected) Grey else Color.Transparent)
             .padding(12.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -42,7 +41,7 @@ fun DayItem(
         )
         Text(
             text = dayOfWeek,
-            color = Grey,
+            color = if (isSelected) White else Grey,
             fontSize = 12.sp
         )
     }

@@ -1,6 +1,7 @@
 package com.devsadeq.composecinematicketsreservations.ui.composable
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,7 +32,9 @@ import com.devsadeq.composecinematicketsreservations.ui.theme.White
 
 
 @Composable
-fun DetailsHeader() {
+fun DetailsHeader(
+    onCloseClicked: () -> Unit
+) {
     Column(
         modifier = Modifier.fillMaxHeight(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -47,6 +50,7 @@ fun DetailsHeader() {
                 modifier = Modifier
                     .clip(RoundedCornerShape(30.dp))
                     .background(White.copy(alpha = 0.3f))
+                    .clickable { onCloseClicked() }
             ) {
                 Icon(
                     painter = painterResource(R.drawable.ic_close_circle),

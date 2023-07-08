@@ -1,6 +1,7 @@
 package com.devsadeq.composecinematicketsreservations.ui.composable
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -17,7 +18,7 @@ import com.devsadeq.composecinematicketsreservations.ui.theme.White
 
 
 @Composable
-fun ReservationScreenHeader(modifier: Modifier) {
+fun ReservationScreenHeader(modifier: Modifier, onCloseClicked: () -> Unit) {
     Column(
         modifier = modifier.padding(vertical = 16.dp, horizontal = 16.dp),
     ) {
@@ -25,6 +26,7 @@ fun ReservationScreenHeader(modifier: Modifier) {
             modifier = Modifier
                 .clip(RoundedCornerShape(30.dp))
                 .background(White.copy(alpha = 0.3f))
+                .clickable { onCloseClicked() }
         ) {
             Icon(
                 painter = painterResource(R.drawable.ic_close_circle),

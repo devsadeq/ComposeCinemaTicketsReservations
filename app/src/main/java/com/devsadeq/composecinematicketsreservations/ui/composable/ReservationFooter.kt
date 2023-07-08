@@ -17,7 +17,7 @@ import com.devsadeq.composecinematicketsreservations.viewmodel.reservation.Reser
 @Composable
 fun ReservationScreenFooter(
     state: ReservationUIState,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Card(
         modifier = modifier

@@ -11,25 +11,30 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.devsadeq.composecinematicketsreservations.ui.composable.BlurBackground
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomeFilterChips
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomeOverview
 import com.devsadeq.composecinematicketsreservations.ui.composable.HomePager
+import com.devsadeq.composecinematicketsreservations.ui.main.Screen
 import com.devsadeq.composecinematicketsreservations.viewmodel.home.HomeUIState
 import com.devsadeq.composecinematicketsreservations.viewmodel.home.HomeViewModel
 
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
+fun HomeScreen(
+    navController: NavController,
+    viewModel: HomeViewModel = hiltViewModel()
+) {
     val state by viewModel.state.collectAsState()
     val pagerState = rememberPagerState(initialPage = 1)
 
     HomeScreenContent(
         state = state,
-        pagerState = pagerState
+        pagerState = pagerState,
+        onItemClicked = { navController.navigate(Screen.Details.route) }
     )
 }
 
@@ -37,7 +42,8 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
 @Composable
 private fun HomeScreenContent(
     state: HomeUIState,
-    pagerState: PagerState
+    pagerState: PagerState,
+    onItemClicked: () -> Unit
 ) {
 
     Box(
@@ -49,15 +55,8 @@ private fun HomeScreenContent(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             HomeFilterChips()
-            HomePager(state.movies, pagerState = pagerState)
+            HomePager(state.movies, pagerState = pagerState, onItemClicked = onItemClicked)
             HomeOverview(state, pagerState)
         }
     }
-}
-
-
-@Preview(showBackground = true, showSystemUi = true, apiLevel = 31)
-@Composable
-fun HomeScreenPreview() {
-    HomeScreen()
 }

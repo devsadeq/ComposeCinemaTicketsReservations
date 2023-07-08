@@ -9,9 +9,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.devsadeq.composecinematicketsreservations.ui.composable.ReservationScreenFooter
 import com.devsadeq.composecinematicketsreservations.ui.composable.ReservationScreenHeader
 import com.devsadeq.composecinematicketsreservations.ui.composable.ReservationScreenSeats
@@ -21,25 +21,33 @@ import com.devsadeq.composecinematicketsreservations.viewmodel.reservation.Reser
 import com.devsadeq.composecinematicketsreservations.viewmodel.reservation.toSeatPairs
 
 @Composable
-fun ReservationScreen(viewModel: ReservationViewModel = hiltViewModel()) {
+fun ReservationScreen(
+    navController: NavController,
+    viewModel: ReservationViewModel = hiltViewModel()
+) {
     val state by viewModel.state.collectAsState()
     ReservationScreenContent(
         state,
-        onSeatClick = viewModel::onSeatSelected
+        onSeatClick = viewModel::onSeatSelected,
+        onCloseClicked = { navController.popBackStack() }
     )
 }
 
 @Composable
 private fun ReservationScreenContent(
     state: ReservationUIState,
-    onSeatClick: (id: Int) -> Unit
+    onSeatClick: (id: Int) -> Unit,
+    onCloseClicked: () -> Unit
 ) {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Black)
     ) {
-        ReservationScreenHeader(modifier = Modifier.align(Alignment.TopCenter))
+        ReservationScreenHeader(
+            modifier = Modifier.align(Alignment.TopCenter),
+            onCloseClicked = onCloseClicked
+        )
         ReservationScreenSeats(
             seatsPairs = state.seats.toSeatPairs(),
             onSeatClick = onSeatClick,
@@ -47,14 +55,9 @@ private fun ReservationScreenContent(
                 .align(Alignment.TopCenter)
                 .padding(top = 200.dp)
         )
-        ReservationScreenFooter(state = state, modifier = Modifier.align(Alignment.BottomCenter))
+        ReservationScreenFooter(
+            state = state,
+            modifier = Modifier.align(Alignment.BottomCenter),
+        )
     }
-}
-
-
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun ReservationScreenPreview() {
-    ReservationScreen()
 }

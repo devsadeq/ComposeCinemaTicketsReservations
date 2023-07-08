@@ -2,6 +2,7 @@ package com.devsadeq.composecinematicketsreservations.ui.composable
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.PagerState
@@ -16,7 +17,8 @@ import com.devsadeq.composecinematicketsreservations.viewmodel.home.HomeUIState
 fun HomePager(
     images: List<HomeUIState.MovieUIState>,
     modifier: Modifier = Modifier,
-    pagerState: PagerState
+    pagerState: PagerState,
+    onItemClicked: () -> Unit
 ) {
     HorizontalPager(
         pageCount = images.size,
@@ -31,7 +33,9 @@ fun HomePager(
 
         MovieItem(
             image = images[page].imageRes,
-            modifier = modifier.scale(scale)
+            modifier = modifier
+                .scale(scale)
+                .clickable { onItemClicked() }
         )
     }
 }

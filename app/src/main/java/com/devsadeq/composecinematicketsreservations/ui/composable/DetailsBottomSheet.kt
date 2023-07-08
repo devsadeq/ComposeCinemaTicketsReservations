@@ -14,7 +14,10 @@ import androidx.compose.ui.unit.dp
 import com.devsadeq.composecinematicketsreservations.ui.theme.White
 
 @Composable
-fun DetailsBottomSheet(modifier: Modifier = Modifier) {
+fun DetailsBottomSheet(
+    onReserveClicked: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Card(
         modifier = modifier
             .fillMaxWidth()
@@ -26,9 +29,7 @@ fun DetailsBottomSheet(modifier: Modifier = Modifier) {
                     bottomEnd = 0.dp
                 )
             ),
-        colors = CardDefaults.cardColors(
-            containerColor = White
-        )
+        colors = CardDefaults.cardColors(containerColor = White)
     ) {
         Column(
             modifier = Modifier
@@ -41,7 +42,7 @@ fun DetailsBottomSheet(modifier: Modifier = Modifier) {
             MovieCategories()
             ActorsImages()
             MovieDescription()
-            CustomButton()
+            CustomButton(onClick = onReserveClicked)
         }
     }
 }

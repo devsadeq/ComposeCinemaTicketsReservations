@@ -13,7 +13,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.devsadeq.composecinematicketsreservations.ui.theme.DarkGrey
 import com.devsadeq.composecinematicketsreservations.ui.theme.Grey
 import com.devsadeq.composecinematicketsreservations.ui.theme.LightGrey
 import com.devsadeq.composecinematicketsreservations.ui.theme.White
@@ -27,7 +26,7 @@ fun TimeItem(
     Column(
         modifier = Modifier
             .clip(RoundedCornerShape(16.dp))
-            .background(if (isSelected) DarkGrey else Color.Transparent)
+            .background(if (isSelected) Grey else Color.Transparent)
             .border(1.dp, LightGrey, RoundedCornerShape(16.dp)),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {

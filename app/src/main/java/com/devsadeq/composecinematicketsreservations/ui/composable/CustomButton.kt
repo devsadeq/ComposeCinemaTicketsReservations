@@ -24,10 +24,11 @@ import com.devsadeq.composecinematicketsreservations.ui.theme.White
 fun CustomButton(
     icon: Int = R.drawable.ic_ticket,
     text: String = stringResource(R.string.booking),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier.padding(top = 24.dp),
+    onClick: () -> Unit = {}
 ) {
     Button(
-        onClick = {},
+        onClick = onClick,
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
             containerColor = Orange

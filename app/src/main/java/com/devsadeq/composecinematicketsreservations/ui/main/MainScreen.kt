@@ -43,8 +43,15 @@ fun MainScreen() {
 @Composable
 fun MainScreenContent() {
     val navController = rememberNavController()
+    val navStackBackEntry by navController.currentBackStackEntryAsState()
+    val currentDestination = navStackBackEntry?.destination
+
     Scaffold(
-        bottomBar = { BottomNavBar(navController) }
+        bottomBar = if (currentDestination?.route != Screen.Details.route && currentDestination?.route != Screen.Reservation.route) {
+            { BottomNavBar(navController) }
+        } else {
+            {}
+        }
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {
             AppNavGraph(navController)
