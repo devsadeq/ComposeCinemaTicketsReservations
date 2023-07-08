@@ -41,14 +41,14 @@ fun CustomButton(
                 painter = painterResource(icon),
                 contentDescription = null,
                 tint = White,
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier.size(28.dp)
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text,
                 color = White,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Normal
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium
             )
         }
     }

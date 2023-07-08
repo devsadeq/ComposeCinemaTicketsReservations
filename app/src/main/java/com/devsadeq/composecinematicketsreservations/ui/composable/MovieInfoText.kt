@@ -27,7 +27,7 @@ fun DetailsInfoText(
         ) {
             Text(
                 title,
-                fontSize = 18.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Medium,
                 color = Black,
                 textAlign = TextAlign.Center,
@@ -35,7 +35,7 @@ fun DetailsInfoText(
             )
             if (isRating) Text(
                 "/10",
-                fontSize = 18.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Medium,
                 color = Grey,
                 fontFamily = OpenSans
@@ -43,7 +43,7 @@ fun DetailsInfoText(
         }
         Text(
             subtitle,
-            fontSize = 14.sp,
+            fontSize = 16.sp,
             fontWeight = FontWeight.Normal,
             color = Grey,
             textAlign = TextAlign.Center,

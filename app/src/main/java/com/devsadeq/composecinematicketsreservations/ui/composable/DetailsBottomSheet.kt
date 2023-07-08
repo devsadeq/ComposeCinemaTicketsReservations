@@ -12,9 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.devsadeq.composecinematicketsreservations.ui.theme.White
+import com.devsadeq.composecinematicketsreservations.viewmodel.details.DetailsUIState
 
 @Composable
 fun DetailsBottomSheet(
+    state: DetailsUIState,
     onReserveClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -23,8 +25,8 @@ fun DetailsBottomSheet(
             .fillMaxWidth()
             .clip(
                 RoundedCornerShape(
-                    topStart = 30.dp,
-                    topEnd = 30.dp,
+                    topStart = 40.dp,
+                    topEnd = 40.dp,
                     bottomStart = 0.dp,
                     bottomEnd = 0.dp
                 )
@@ -40,7 +42,7 @@ fun DetailsBottomSheet(
             MovieStatistics()
             MovieTitle()
             MovieCategories()
-            ActorsImages()
+            ActorsImages(state.actors)
             MovieDescription()
             CustomButton(onClick = onReserveClicked)
         }

@@ -56,8 +56,8 @@ fun DetailsHeader(
                     painter = painterResource(R.drawable.ic_close_circle),
                     contentDescription = null,
                     modifier = Modifier
-                        .padding(4.dp)
-                        .size(24.dp),
+                        .padding(8.dp)
+                        .size(28.dp),
                     tint = White,
                 )
             }
@@ -68,7 +68,7 @@ fun DetailsHeader(
             ) {
                 Row(
                     modifier = Modifier
-                        .padding(4.dp)
+                        .padding(8.dp)
                         .align(Alignment.TopCenter),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
@@ -90,10 +90,10 @@ fun DetailsHeader(
                 }
             }
         }
-        Spacer(modifier = Modifier.height(65.dp))
+        Spacer(modifier = Modifier.height(110.dp))
         IconButton(
             onClick = {},
-            modifier = Modifier.size(48.dp),
+            modifier = Modifier.size(65.dp),
         ) {
             Box(
                 modifier = Modifier
@@ -106,7 +106,7 @@ fun DetailsHeader(
                     painter = painterResource(id = R.drawable.ic_play),
                     tint = White,
                     contentDescription = "",
-                    modifier = Modifier.size(20.dp)
+                    modifier = Modifier.size(30.dp)
                 )
             }
         }
