@@ -19,6 +19,6 @@ fun BlurBackground(
         modifier = Modifier
             .fillMaxSize()
             .blur(80.dp)
-            .offset(y = (-200).dp)
+            .offset(y = (-300).dp)
     )
 }

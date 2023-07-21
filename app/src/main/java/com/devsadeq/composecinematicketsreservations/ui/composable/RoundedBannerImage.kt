@@ -22,16 +22,16 @@ fun RoundedBannerImage(modifier: Modifier = Modifier) {
         contentDescription = "",
         modifier = modifier
             .fillMaxWidth()
-            .height(150.dp)
+            .height(170.dp)
             .padding(16.dp)
             .drawWithContent {
                 val path = Path().apply {
-                    val yRatio = 0.25f
+                    val yRatio = 0.35f
                     moveTo(0f, size.height * yRatio)
                     lineTo(0f, size.height)
                     quadraticBezierTo(
                         size.width / 2,
-                        size.height * 0.8f,
+                        size.height * 0.6f,
                         size.width,
                         size.height
                     )

@@ -15,10 +15,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.devsadeq.composecinematicketsreservations.R
 
 @Composable
-fun ActorsImages() {
+fun ActorsImages(
+    actors: List<Int>
+) {
     LazyRow(
         modifier = Modifier.padding(vertical = 16.dp),
         horizontalArrangement = Arrangement.Center,
@@ -26,14 +27,14 @@ fun ActorsImages() {
     ) {
         items(10) {
             Image(
-                painter = painterResource(R.drawable.movie3),
+                painter = painterResource(actors[it]),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(60.dp)
+                    .size(80.dp)
                     .clip(RoundedCornerShape(100.dp)),
                 contentScale = ContentScale.Crop,
             )
-            Spacer(modifier = Modifier.width(4.dp))
+            Spacer(modifier = Modifier.width(6.dp))
         }
     }
 }

@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.devsadeq.composecinematicketsreservations.ui.theme.Grey
@@ -29,7 +30,7 @@ fun SeatStatusIndicator(
     ) {
         Box(
             modifier = Modifier
-                .size(10.dp)
+                .size(14.dp)
                 .clip(shape = CircleShape)
                 .background(color)
         )
@@ -38,6 +39,7 @@ fun SeatStatusIndicator(
             text = label,
             color = Grey,
             fontFamily = OpenSans,
+            fontWeight = FontWeight.Medium,
             fontSize = 14.sp
         )
     }

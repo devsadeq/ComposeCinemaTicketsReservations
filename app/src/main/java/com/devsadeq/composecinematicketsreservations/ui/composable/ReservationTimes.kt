@@ -14,7 +14,7 @@ import com.devsadeq.composecinematicketsreservations.viewmodel.reservation.Reser
 fun ReservationTimes(state: ReservationUIState) {
     LazyRow(
         modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
+        contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         items(state.times) {

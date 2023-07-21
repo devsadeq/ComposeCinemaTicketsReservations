@@ -48,13 +48,13 @@ class ReservationViewModel @Inject constructor() : ViewModel() {
 
     private fun getDays() {
         val days = mutableListOf<DayUIState>()
-        for (i in 1..30) {
+        for (i in 14..30) {
             days.add(
                 DayUIState(
                     id = i,
-                    dayOfWeek = if (i == 1) "Today" else "Day $i",
+                    dayOfWeek = if (i == 14) "Today" else "Day $i",
                     dayOfMonth = i,
-                    isSelected = i == 1
+                    isSelected = i == 16
                 )
             )
         }

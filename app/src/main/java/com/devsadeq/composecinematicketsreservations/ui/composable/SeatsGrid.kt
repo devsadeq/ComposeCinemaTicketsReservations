@@ -28,19 +28,19 @@ fun SeatsGrid(
             when (index) {
                 in leftSeatsIndexes -> SeatPair(
                     seatsPairs[index],
-                    modifier = Modifier.rotate(8f),
+                    modifier = Modifier.rotate(10f),
                     onSeatClick = onSeatClick
                 )
 
                 in rightSeatsIndexes -> SeatPair(
                     seatsPairs[index],
-                    modifier = Modifier.rotate(-8f),
+                    modifier = Modifier.rotate(-10f),
                     onSeatClick = onSeatClick
                 )
 
                 else -> SeatPair(
                     seatsPairs[index],
-                    modifier = Modifier.padding(top = 8.dp),
+                    modifier = Modifier.padding(top = 9.dp),
                     onSeatClick = onSeatClick
                 )
             }

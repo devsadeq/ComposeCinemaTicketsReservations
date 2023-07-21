@@ -23,7 +23,7 @@ fun MovieItem(
         contentDescription = null,
         modifier = modifier
             .fillMaxWidth()
-            .height(450.dp)
+            .height(550.dp)
             .clip(RoundedCornerShape(30.dp)),
         contentScale = ContentScale.Crop,
     )
