@@ -14,8 +14,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.devsadeq.composecinematicketsreservations.ui.theme.Black
 import com.devsadeq.composecinematicketsreservations.ui.theme.Grey
 import com.devsadeq.composecinematicketsreservations.ui.theme.LightGrey
+import com.devsadeq.composecinematicketsreservations.ui.theme.OpenSans
 import com.devsadeq.composecinematicketsreservations.ui.theme.White
 
 
@@ -27,22 +29,24 @@ fun DayItem(
 ) {
     Column(
         modifier = Modifier
-            .border(1.dp, LightGrey, RoundedCornerShape(16.dp))
-            .clip(RoundedCornerShape(16.dp))
+            .border(1.dp, if (isSelected) Grey else LightGrey, RoundedCornerShape(24.dp))
+            .clip(RoundedCornerShape(24.dp))
             .background(if (isSelected) Grey else Color.Transparent)
-            .padding(12.dp),
+            .padding(vertical = 12.dp, horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(
             text = dayOfMonth.toString(),
-            fontSize = 20.sp,
+            fontSize = 24.sp,
             fontWeight = FontWeight.Medium,
-            color = if (isSelected) White else Grey
+            color = if (isSelected) White else Black
         )
         Text(
             text = dayOfWeek,
             color = if (isSelected) White else Grey,
-            fontSize = 12.sp
+            fontSize = 12.sp,
+            fontWeight = FontWeight.Medium,
+            fontFamily = OpenSans,
         )
     }
 }

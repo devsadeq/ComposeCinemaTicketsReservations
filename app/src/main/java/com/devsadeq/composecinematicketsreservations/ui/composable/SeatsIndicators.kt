@@ -18,7 +18,7 @@ fun SeatsIndicators() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(20.dp),
+            .padding(30.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         SeatStatusIndicator(stringResource(R.string.available), color = White)

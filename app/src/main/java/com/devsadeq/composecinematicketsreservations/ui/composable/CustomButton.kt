@@ -24,7 +24,7 @@ import com.devsadeq.composecinematicketsreservations.ui.theme.White
 fun CustomButton(
     icon: Int = R.drawable.ic_ticket,
     text: String = stringResource(R.string.booking),
-    modifier: Modifier = Modifier.padding(top = 24.dp),
+    modifier: Modifier = Modifier,
     onClick: () -> Unit = {}
 ) {
     Button(
@@ -41,14 +41,14 @@ fun CustomButton(
                 painter = painterResource(icon),
                 contentDescription = null,
                 tint = White,
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier.size(28.dp)
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
                 text,
                 color = White,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Normal
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Medium
             )
         }
     }

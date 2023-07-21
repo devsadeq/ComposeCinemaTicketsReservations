@@ -24,8 +24,8 @@ fun ReservationScreenFooter(
             .fillMaxWidth()
             .clip(
                 RoundedCornerShape(
-                    topStart = 30.dp,
-                    topEnd = 30.dp,
+                    topStart = 40.dp,
+                    topEnd = 40.dp,
                     bottomStart = 0.dp,
                     bottomEnd = 0.dp
                 )
@@ -37,7 +37,7 @@ fun ReservationScreenFooter(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 24.dp),
+                .padding(vertical = 30.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             ReservationDays(state)

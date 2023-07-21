@@ -16,6 +16,5 @@ fun ReservationScreenSeats(
     ) {
         SeatsGrid(seatsPairs = seatsPairs, onSeatClick = onSeatClick)
         SeatsIndicators()
-
     }
 }
